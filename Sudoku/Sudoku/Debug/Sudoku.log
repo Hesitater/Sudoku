@@ -1,0 +1,10 @@
+﻿  SudokuSolver.cpp
+  SudokuLoader.cpp
+  SudokuGenerator.cpp
+  main.cpp
+  DLXSolver.cpp
+  DLXNode.cpp
+  DLXGenerator.cpp
+  正在生成代码...
+  Sudoku.vcxproj -> C:\Users\Looper\Documents\Visual Studio 2015\Projects\Sudoku\Debug\sudoku.exe
+  Sudoku.vcxproj -> C:\Users\Looper\Documents\Visual Studio 2015\Projects\Sudoku\Debug\sudoku.pdb (Partial PDB)

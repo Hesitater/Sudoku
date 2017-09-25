@@ -1,0 +1,32 @@
+[2017-09-25 16:44:16] [info] Start Program:
+Path:"C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\Debug\sudoku.exe"
+Arguments:-c 10 
+Working directory: "C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\Project1\"
+Modules: Selected: C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\Debug\sudoku.exe C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\Release\UnitTest1.lib Excluded: 
+Sources: Selected: C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\Project1 C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\UnitTest1 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Looper\AppData\Local\Temp\j0odtzf3.vf0 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+
+[2017-09-25 16:44:16] [info] Module: C:\Users\Looper\Documents\Visual Studio 2015\Projects\Project1\Debug\sudoku.exe is selected because it matches selected pattern: 
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\ntdll.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\kernel32.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\KernelBase.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\msvcp140d.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\vcruntime140d.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\ucrtbased.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\api-ms-win-core-timezone-l1-1-0.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\api-ms-win-core-file-l2-1-0.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\api-ms-win-core-localization-l1-2-0.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\api-ms-win-core-synch-l1-2-0.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\api-ms-win-core-processthreads-l1-1-1.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] Module: C:\Windows\SysWOW64\api-ms-win-core-file-l1-2-0.dll is skipped because it matches no selected patterns
+[2017-09-25 16:44:16] [info] ----------------------------------------------------
+[2017-09-25 16:44:16] [info] Coverage binary generated in file: C:\Users\Looper\AppData\Local\Temp\j0odtzf3.vf0
+[2017-09-25 16:44:16] [info] ----------------------------------------------------
