@@ -1,3 +1,11 @@
-﻿    正在创建库 C:\Users\Looper\Documents\Visual Studio 2015\Projects\Sudoku\Debug\SudokuTest.lib 和对象 C:\Users\Looper\Documents\Visual Studio 2015\Projects\Sudoku\Debug\SudokuTest.exp
-  SudokuTest.vcxproj -> C:\Users\Looper\Documents\Visual Studio 2015\Projects\Sudoku\Debug\SudokuTest.dll
-  SudokuTest.vcxproj -> C:\Users\Looper\Documents\Visual Studio 2015\Projects\Sudoku\Debug\SudokuTest.pdb (Partial PDB)
+﻿  stdafx.cpp
+  unittest1.cpp
+c:\users\looper\documents\visual studio 2015\projects\sudoku\sudokutest\unittest1.cpp(33): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note: 参见“itoa”的声明
+c:\users\looper\documents\visual studio 2015\projects\sudoku\sudokutest\unittest1.cpp(59): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note: 参见“itoa”的声明
+c:\users\looper\documents\visual studio 2015\projects\sudoku\sudokutest\unittest1.cpp(81): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _itoa. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(1316): note: 参见“itoa”的声明
+    正在创建库 c:\users\looper\documents\visual studio 2015\Projects\Sudoku\Debug\SudokuTest.lib 和对象 c:\users\looper\documents\visual studio 2015\Projects\Sudoku\Debug\SudokuTest.exp
+  SudokuTest.vcxproj -> c:\users\looper\documents\visual studio 2015\Projects\Sudoku\Debug\SudokuTest.dll
+  SudokuTest.vcxproj -> c:\users\looper\documents\visual studio 2015\Projects\Sudoku\Debug\SudokuTest.pdb (Partial PDB)

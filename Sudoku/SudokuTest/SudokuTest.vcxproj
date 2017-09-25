@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DE9C238E-3888-41C3-A21C-CD5FFD393698}</ProjectGuid>
+    <ProjectGuid>{5F2EA178-BEE8-4288-937A-AC59B42D5106}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SudokuTest</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -164,7 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sudoku\Sudoku.vcxproj">
-      <Project>{26e0d785-42c2-4d7a-8a57-c1a466e714b2}</Project>
+      <Project>{03e924ee-909e-43eb-a980-af9e17679733}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

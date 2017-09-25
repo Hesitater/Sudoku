@@ -18,28 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DLXGenerator.h" />
-    <ClInclude Include="DLXNode.h" />
-    <ClInclude Include="DLXSolver.h" />
-    <ClInclude Include="SudokuGenerator.h" />
-    <ClInclude Include="SudokuLoader.h" />
-    <ClInclude Include="SudokuSolver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DLXGenerator.cpp" />
-    <ClCompile Include="DLXNode.cpp" />
-    <ClCompile Include="DLXSolver.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="SudokuGenerator.cpp" />
-    <ClCompile Include="SudokuLoader.cpp" />
-    <ClCompile Include="SudokuSolver.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{26E0D785-42C2-4D7A-8A57-C1A466E714B2}</ProjectGuid>
-    <RootNamespace>sudoku</RootNamespace>
+    <ProjectGuid>{03E924EE-909E-43EB-A980-AF9E17679733}</ProjectGuid>
+    <RootNamespace>Sudoku</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>sudoku</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,6 +109,23 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="DLXGenerator.h" />
+    <ClInclude Include="DLXNode.h" />
+    <ClInclude Include="DLXSolver.h" />
+    <ClInclude Include="SudokuGenerator.h" />
+    <ClInclude Include="SudokuLoader.h" />
+    <ClInclude Include="SudokuSolver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DLXGenerator.cpp" />
+    <ClCompile Include="DLXNode.cpp" />
+    <ClCompile Include="DLXSolver.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SudokuGenerator.cpp" />
+    <ClCompile Include="SudokuLoader.cpp" />
+    <ClCompile Include="SudokuSolver.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
