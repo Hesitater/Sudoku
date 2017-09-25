@@ -1,12 +1,10 @@
 #include <iostream>
 #include "SudokuGenerator.h"
 #include "SudokuLoader.h"
-#include "SudokuSolver.h"
-#include "DLXSolver.h"
-#include "DLXGenerator.h"
-#include "fstream"
 
 #define sudokuRowCount 9
+#define sudokuMaximum 1000000
+
 using namespace std;
 
 void solvePuzzle(fstream& puzzleFile){
@@ -51,6 +49,10 @@ void createSudoku(fstream& sudokuFile, int sudokuCount){
     loader.writeToFile(answers, sudokuFile);
 }
 
+void reportError() {
+    cout << "Program argument error" << endl;
+}
+
 int main(int argc, char* argv[]) {
     /* Debugging code: DLXSolver
     DLXGenerator dlxGenerator = DLXGenerator();
@@ -72,16 +74,23 @@ int main(int argc, char* argv[]) {
         }
     }*/
 
+    if (argc != 3) {
+        reportError();
+        return 0;
+    }
+
     if (strcmp(argv[1], "-s") == 0) { //Solve puzzle from file
         fstream puzzleFile;
         puzzleFile.open(argv[2], ios::in);
         solvePuzzle(puzzleFile);
         puzzleFile.close();
-    } else if (strcmp(argv[1], "-c") == 0) { //Create puzzle file
+    } else if (strcmp(argv[1], "-c") == 0 && atoi(argv[1]) > 0 && atoi(argv[1]) <= sudokuMaximum) { //Create puzzle file
         fstream sudokuFile;
         sudokuFile.open("sudoku.txt", ios::out);
         createSudoku(sudokuFile, atoi(argv[2]));
         sudokuFile.close();
+    } else {
+        reportError();
     }
 
     return 0;
