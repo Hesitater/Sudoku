@@ -18,8 +18,12 @@ void solvePuzzle(fstream& puzzleFile){
         SudokuSolver solver = SudokuSolver();
         DLXNode* listHead = new DLXNode();
         vector<int> answer;
-        solver.solveSudoku(listHead, sudokuSet[j], answer);
-        answers.push_back(answer);
+
+        if (solver.solveSudoku(listHead, sudokuSet[j], answer)) { //Answer got correctly
+            answers.push_back(answer);
+        } else {
+            cout << "No solution for sudoku No." << j + 1 << endl;
+        }
     }
 
 /*
@@ -35,7 +39,11 @@ void solvePuzzle(fstream& puzzleFile){
     //Save solution to file
     fstream solutionFile;
     solutionFile.open("sudoku.txt", ios::out);
-    loader.writeToFile(answers, solutionFile);
+    if (answers.size() == 0) {
+        cout << "No solutions for all sudokus" << endl;
+    }else {
+        loader.writeToFile(answers, solutionFile);
+    }
     solutionFile.close();
 }
 

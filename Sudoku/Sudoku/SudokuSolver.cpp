@@ -8,13 +8,18 @@
 #define sudokuSize 81
 
 //Invoke DLXSolver's solve() to solve one sudoku, transform solution into array
-void SudokuSolver::solveSudoku(DLXNode *listHead, vector<int> &sudoku, vector<int> &answer) {
+bool SudokuSolver::solveSudoku(DLXNode *listHead, vector<int> &sudoku, vector<int> &answer) {
     transformToList(sudoku, listHead);
     DLXSolver dlxSolver = DLXSolver();
     vector<int> solution;
     dlxSolver.solveWithOneAnswer(listHead, solution, 0); //Got DLX answer
 
+    if (solution.size() != sudokuSize ) { //The solution wasn't got
+        return false;
+    }
+
     solutionToAnswer(solution, answer); //Answer got
+    return true;
 }
 
 //Solve one sudoku with different answers

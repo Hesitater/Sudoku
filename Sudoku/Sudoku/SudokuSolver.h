@@ -18,7 +18,7 @@ public:
     void transformToList(vector<int>& sudokuArray, DLXNode *listHead);
 
     //Invoke DLXSolver's solve() to solve one sudoku, transform solution into array
-    void solveSudoku(DLXNode *listHead, vector<int>& sudoku, vector<int> &answer);
+    bool solveSudoku(DLXNode *listHead, vector<int>& sudoku, vector<int> &answer);
 
     //Solve one sudoku with different answers
     void solveWithMultiAnswers(DLXNode* listHead, vector<int>& sudoku, vector<vector<int>>& answers, int answerCount);
