@@ -106,5 +106,5 @@ void SudokuSolver::appendOneSubscript(vector<vector<int>>& elementSubscriptss, i
 
 //Get value according to orthogonal list index
 int SudokuSolver::getValue(int index){
-    return (((index - sudokuSize) % 9) + 1);
+    return (((index - sudokuSize) % sudokuLength) + 1);
 }

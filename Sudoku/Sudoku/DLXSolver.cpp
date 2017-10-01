@@ -6,9 +6,6 @@
 //Get only one solution
 bool DLXSolver::solveWithOneAnswer(DLXNode *listHead, vector<int>& solution, int depth) {
     if (listHead->rightNode == listHead) { //Solution found
-        /*for (int i = 0; i < depth; ++i) { //Debugging code
-            cout << solution[i] <<endl;
-        }*/
         return true;
     }
 
@@ -48,9 +45,6 @@ bool DLXSolver::solveWithOneAnswer(DLXNode *listHead, vector<int>& solution, int
 //Get all solutions
 void DLXSolver:: solveWithAllAnswers(DLXNode *listHead, vector<int>& tempSolution, vector<vector<int>>& lastSolution, int depth) {
     if (listHead->rightNode == listHead) { //One solution found
-        /*for (int i = 0; i < depth; ++i) { //Debugging code
-            cout << tempSolution[i] <<endl;
-        }*/
         lastSolution.push_back(tempSolution);
         return;
     }
@@ -82,9 +76,6 @@ void DLXSolver:: solveWithAllAnswers(DLXNode *listHead, vector<int>& tempSolutio
 void DLXSolver:: solveWithCertainAnswers(DLXNode *listHead, vector<int>& tempSolution, vector<vector<int>>& lastSolution,
                                          int answerCount, int depth) {
     if (listHead->rightNode == listHead) { //One solution found
-        /*for (int i = 0; i < depth; ++i) { //Debugging code
-            cout << tempSolution[i] <<endl;
-        }*/
         lastSolution.push_back(tempSolution);
         return;
     }

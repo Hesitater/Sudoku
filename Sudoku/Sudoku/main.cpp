@@ -26,16 +26,6 @@ void solvePuzzle(fstream& puzzleFile){
         }
     }
 
-/*
-    //Debugging code: console output
-    for (int k = 0; k < answers.size(); ++k) {
-        for (int i = 0; i < answers[k].size(); ++i) {
-            cout << answers[k][i] << endl;
-        }
-        cout << "\n" <<endl;
-    }
-*/
-
     //Save solution to file
     fstream solutionFile;
     solutionFile.open("sudoku.txt", ios::out);
@@ -62,25 +52,6 @@ void reportError() {
 }
 
 int main(int argc, char* argv[]) {
-    /* Debugging code: DLXSolver
-    DLXGenerator dlxGenerator = DLXGenerator();
-    DLXNode* listHead = new DLXNode();
-    vector<ColumnHead*> columnHeads = dlxGenerator.createColumnHeads(listHead, 4);
-    vector<vector<int>> matrix = {{0,1},{2,3},{0,1,2},{3}};
-    for (int i = 0; i < matrix.size(); ++i) {
-        dlxGenerator.appendLine(columnHeads, matrix[i], i);
-    }
-
-    DLXSolver solver = DLXSolver();
-    vector<int> tempSolution;
-    vector<vector<int>> lastSolution;
-    solver.solveWithCertainAnswers(listHead, tempSolution, lastSolution, 1, 0);
-
-    for (int j = 0; j < lastSolution.size(); ++j) {
-        for (int i = 0; i < lastSolution[j].size(); ++i) {
-            cout << lastSolution[j][i] << endl;
-        }
-    }*/
 
     if (argc != 3) {
         reportError();
@@ -92,7 +63,7 @@ int main(int argc, char* argv[]) {
         puzzleFile.open(argv[2], ios::in);
         solvePuzzle(puzzleFile);
         puzzleFile.close();
-    } else if (strcmp(argv[1], "-c") == 0 && atoi(argv[1]) > 0 && atoi(argv[1]) <= sudokuMaximum) { //Create puzzle file
+    } else if (strcmp(argv[1], "-c") == 0 && atoi(argv[2]) > 0 && atoi(argv[2]) <= sudokuMaximum) { //Create puzzle file
         fstream sudokuFile;
         sudokuFile.open("sudoku.txt", ios::out);
         createSudoku(sudokuFile, atoi(argv[2]));
