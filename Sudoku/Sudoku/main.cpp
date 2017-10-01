@@ -92,7 +92,7 @@ int main(int argc, char* argv[]) {
         puzzleFile.open(argv[2], ios::in);
         solvePuzzle(puzzleFile);
         puzzleFile.close();
-    } else if (strcmp(argv[1], "-c") == 0 && atoi(argv[1]) > 0 && atoi(argv[1]) <= sudokuMaximum) { //Create puzzle file
+    } else if (strcmp(argv[1], "-c") == 0 && atoi(argv[2]) > 0 && atoi(argv[2]) <= sudokuMaximum) { //Create puzzle file
         fstream sudokuFile;
         sudokuFile.open("sudoku.txt", ios::out);
         createSudoku(sudokuFile, atoi(argv[2]));
