@@ -1,0 +1,13 @@
+﻿  DLXGenerator.cpp
+  DLXNode.cpp
+  DLXSolver.cpp
+  main.cpp
+  SudokuGenerator.cpp
+  SudokuLoader.cpp
+SudokuLoader.cpp(49): warning C4018: “<”: 有符号/无符号不匹配
+  SudokuSolver.cpp
+  正在生成代码
+  All 564 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  Sudoku.vcxproj -> C:\Users\Looper\Desktop\Sudoku\Sudoku\Release\Sudoku.exe
+  Sudoku.vcxproj -> C:\Users\Looper\Desktop\Sudoku\Sudoku\Release\Sudoku.pdb (Full PDB)

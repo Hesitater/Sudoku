@@ -31,10 +31,11 @@ void SudokuSolver::solveWithMultiAnswers(DLXNode *listHead, vector<int>& sudoku,
     dlxSolver.solveWithCertainAnswers(listHead, tempSolution, lastSolution, answerCount, 0); //Got DLX answer
 
     //Get answers from lastSolution
+	answers.resize(answerCount);
     for (int i = 0; i < answerCount; ++i) {
         vector<int> answer;
         solutionToAnswer(lastSolution[i], answer);
-        answers.push_back(answer);
+        answers[i] = answer;
     }
 }
 
@@ -48,10 +49,8 @@ void SudokuSolver::solutionToAnswer(vector<int>& solution, vector<int>& answer) 
 
     for (unsigned int i = 0; i < solution.size(); ++i) { //One row info represents one value with location
         rowIndex = solution[i];
-        vector<int>elementSubscripts = elementSubscriptss[rowIndex];
-
-        solutionIndex = elementSubscripts[0]; //First element infers location
-        value = getValue(elementSubscripts[1]); //Second element infers value
+        solutionIndex = elementSubscriptss[rowIndex][0]; //First element infers location
+        value = getValue(elementSubscriptss[rowIndex][1]); //Second element infers value
 
         answer[solutionIndex] = value;
     }

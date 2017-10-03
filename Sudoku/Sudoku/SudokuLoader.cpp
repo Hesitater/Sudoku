@@ -44,11 +44,13 @@ vector<vector<int>> SudokuLoader::loadFromFile(fstream& file){
 
 //Save sudokus from sudoku set to file
 void SudokuLoader::writeToFile(vector<vector<int>>& sudokuSet, fstream& file){
-    for (unsigned int i = 0; i < sudokuSet.size(); ++i) { //Sudoku set
+	int sudokuCount = sudokuSet.size();
+	//char content[sudokuCount * (19 * 9 + 2)];
+    for (unsigned int i = 0; i < sudokuCount; ++i) { //Sudoku set
         char content[19 * 9 + 2];
         int contentIndex = 0;
 
-        for (unsigned int j = 0, k = 0; j < sudokuSet[i].size(); ++j, ++k) { //One sudoku
+        for (unsigned int j = 0, k = 0; j < sudokuSize; ++j, ++k) { //One sudoku
             if (k != 0){
                 content[contentIndex] = ' ';
                 contentIndex++;

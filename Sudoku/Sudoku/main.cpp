@@ -11,16 +11,19 @@ void solvePuzzle(fstream& puzzleFile){
     //Create loader
     SudokuLoader loader = SudokuLoader();
     vector<vector<int>> sudokuSet = loader.loadFromFile(puzzleFile);
+	int sudokuCount = sudokuSet.size();
 
     //Solve sudokus
     vector<vector<int>> answers;
+	answers.resize(sudokuCount);
+
     for (unsigned int j = 0; j < sudokuSet.size(); ++j) {
         SudokuSolver solver = SudokuSolver();
         DLXNode* listHead = new DLXNode();
         vector<int> answer;
 
         if (solver.solveSudoku(listHead, sudokuSet[j], answer)) { //Answer got correctly
-            answers.push_back(answer);
+            answers[j] = answer;
         } else {
             cout << "No solution for sudoku No." << j + 1 << endl;
         }

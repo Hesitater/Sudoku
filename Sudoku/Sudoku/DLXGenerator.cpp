@@ -6,13 +6,13 @@
 //Create column heads linked with list head, and return column heads
 vector<ColumnHead*> DLXGenerator:: createColumnHeads(DLXNode* listHead, int length){
     vector<ColumnHead*> columnHeads;
-    //columnHeads.resize(length);
+    columnHeads.resize(length);
     DLXNode* lastNode = listHead;
 
     for (int i = 0; i < length; ++i) {
         ColumnHead* columnHead = new ColumnHead(i);
         lastNode->appendRightNode(columnHead);
-        columnHeads.push_back(columnHead);
+        columnHeads[i] = columnHead;
         lastNode = columnHead;
     }
 

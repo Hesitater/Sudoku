@@ -9,15 +9,10 @@
 vector<vector<int>> SudokuGenerator:: generateSudokus(int sudokuCount) {
     vector<vector<int>> answers;
 
-    //Create an sudoku with all zero
+    //Create an sudoku with all zero except the first block
     vector<int> originalSudoku;
-    for (int j = 0; j < sudokuSize; ++j) {
-        if (j == 0) { //The first one must be 5
-            originalSudoku.push_back(5);
-        }else {
-            originalSudoku.push_back(0);
-        }
-    }
+	originalSudoku.assign(sudokuSize, 0);
+	originalSudoku[0] = 5; //The first one must be 5
 
     //Solve the zero sudoku to get sudoku outcomes
     DLXGenerator generator = DLXGenerator();
