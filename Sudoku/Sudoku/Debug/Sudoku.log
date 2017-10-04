@@ -1,4 +1,4 @@
 ﻿  SudokuLoader.cpp
-c:\users\looper\desktop\sudoku\sudoku\sudoku\sudokuloader.cpp(49): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\looper\desktop\sudoku\sudoku\sudoku\sudokuloader.cpp(51): warning C4018: “<”: 有符号/无符号不匹配
   Sudoku.vcxproj -> C:\Users\Looper\Desktop\Sudoku\Sudoku\Debug\Sudoku.exe
   Sudoku.vcxproj -> C:\Users\Looper\Desktop\Sudoku\Sudoku\Debug\Sudoku.pdb (Partial PDB)

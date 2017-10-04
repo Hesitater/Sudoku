@@ -24,7 +24,7 @@ public:
     void solveWithMultiAnswers(DLXNode* listHead, vector<int>& sudoku, vector<vector<int>>& answers, int answerCount);
 
     //Transform dlx solution into sudoku answer
-    void solutionToAnswer(vector<int>& solution, vector<int>& answer);
+    void solutionToAnswer(vector<CommonNode*>& solution, vector<int>& answer);
 
     int indexToRow(int index, int rowLength);
 
@@ -33,6 +33,8 @@ public:
     void appendOneSubscript(vector<vector<int>>& subscriptss, int index, int value);
 
     int getValue(int index);
+
+	CommonNode* getRowHead(CommonNode* node);
 };
 
 

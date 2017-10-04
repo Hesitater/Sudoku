@@ -4,7 +4,7 @@
 
 #include "DLXSolver.h"
 //Get only one solution
-bool DLXSolver::solveWithOneAnswer(DLXNode *listHead, vector<int>& solution, int depth) {
+bool DLXSolver::solveWithOneAnswer(DLXNode *listHead, vector<CommonNode*>& solution, int depth) {
     if (listHead->rightNode == listHead) { //Solution found
         return true;
     }
@@ -17,7 +17,7 @@ bool DLXSolver::solveWithOneAnswer(DLXNode *listHead, vector<int>& solution, int
 
     //Loop rows with one in column below columnHead
     for (DLXNode* node = columnHead->downNode; node != columnHead; node = node->downNode) {
-        solution.push_back(((CommonNode*)node)->rowIndex); //Add temporary tempSolution node
+        solution.push_back((CommonNode*)node); //Add temporary tempSolution node
 
         for (DLXNode* node2 = node->rightNode; node2 != node; node2 = node2->rightNode) {
             cover(((CommonNode*)node2)->columnHead);
@@ -43,7 +43,7 @@ bool DLXSolver::solveWithOneAnswer(DLXNode *listHead, vector<int>& solution, int
 }
 
 //Get all solutions
-void DLXSolver:: solveWithAllAnswers(DLXNode *listHead, vector<int>& tempSolution, vector<vector<int>>& lastSolution, int depth) {
+void DLXSolver:: solveWithAllAnswers(DLXNode *listHead, vector<CommonNode*>& tempSolution, vector<vector<CommonNode*>>& lastSolution, int depth) {
     if (listHead->rightNode == listHead) { //One solution found
         lastSolution.push_back(tempSolution);
         return;
@@ -53,7 +53,7 @@ void DLXSolver:: solveWithAllAnswers(DLXNode *listHead, vector<int>& tempSolutio
     cover(columnHead);
 
     for (DLXNode* node = columnHead->downNode; node != columnHead; node = node->downNode) {
-        tempSolution.push_back(((CommonNode*)node)->rowIndex); //Add temporary tempSolution node
+        tempSolution.push_back((CommonNode*)node); //Add temporary tempSolution node
 
         for (DLXNode* node2 = node->rightNode; node2 != node; node2 = node2->rightNode) {
             cover(((CommonNode*)node2)->columnHead);
@@ -73,7 +73,7 @@ void DLXSolver:: solveWithAllAnswers(DLXNode *listHead, vector<int>& tempSolutio
 }
 
 //Get certain amount of answers
-void DLXSolver:: solveWithCertainAnswers(DLXNode *listHead, vector<int>& tempSolution, vector<vector<int>>& lastSolution,
+void DLXSolver:: solveWithCertainAnswers(DLXNode *listHead, vector<CommonNode*>& tempSolution, vector<vector<CommonNode*>>& lastSolution,
                                          int answerCount, int depth) {
     if (listHead->rightNode == listHead) { //One solution found
         lastSolution.push_back(tempSolution);
@@ -84,7 +84,7 @@ void DLXSolver:: solveWithCertainAnswers(DLXNode *listHead, vector<int>& tempSol
     cover(columnHead);
 
     for (DLXNode* node = columnHead->downNode; node != columnHead; node = node->downNode) {
-        tempSolution.push_back(((CommonNode*)node)->rowIndex); //Add temporary tempSolution node
+        tempSolution.push_back((CommonNode*)node); //Add temporary tempSolution node
 
         for (DLXNode* node2 = node->rightNode; node2 != node; node2 = node2->rightNode) {
             cover(((CommonNode*)node2)->columnHead);

@@ -11,7 +11,7 @@
 bool SudokuSolver::solveSudoku(DLXNode *listHead, vector<int> &sudoku, vector<int> &answer) {
     transformToList(sudoku, listHead);
     DLXSolver dlxSolver = DLXSolver();
-    vector<int> solution;
+    vector<CommonNode*> solution;
     dlxSolver.solveWithOneAnswer(listHead, solution, 0); //Got DLX answer
 
     if (solution.size() != sudokuSize ) { //The solution wasn't got
@@ -26,8 +26,10 @@ bool SudokuSolver::solveSudoku(DLXNode *listHead, vector<int> &sudoku, vector<in
 void SudokuSolver::solveWithMultiAnswers(DLXNode *listHead, vector<int>& sudoku, vector<vector<int>>& answers, int answerCount) {
     transformToList(sudoku, listHead);
     DLXSolver dlxSolver = DLXSolver();
-    vector<int> tempSolution;
-    vector<vector<int>> lastSolution;
+    vector<CommonNode*> tempSolution;
+    vector<vector<CommonNode*>> lastSolution;
+    tempSolution.reserve(sudokuSize);
+    lastSolution.reserve(sudokuSize);
     dlxSolver.solveWithCertainAnswers(listHead, tempSolution, lastSolution, answerCount, 0); //Got DLX answer
 
     //Get answers from lastSolution
@@ -40,18 +42,17 @@ void SudokuSolver::solveWithMultiAnswers(DLXNode *listHead, vector<int>& sudoku,
 }
 
 //Transform dlx solution into sudoku answer
-void SudokuSolver::solutionToAnswer(vector<int>& solution, vector<int>& answer) {
+void SudokuSolver::solutionToAnswer(vector<CommonNode*>& solution, vector<int>& answer) {
     answer.resize(sudokuSize);
     DLXNode* lastNode = NULL;
     int solutionIndex;
     int value;
     int rowIndex;
 
-    for (unsigned int i = 0; i < solution.size(); ++i) { //One row info represents one value with location
-        rowIndex = solution[i];
-        solutionIndex = elementSubscriptss[rowIndex][0]; //First element infers location
-        value = getValue(elementSubscriptss[rowIndex][1]); //Second element infers value
-
+    for (unsigned int i = 0; i < sudokuSize; ++i) { //One row info represents one value with location
+		CommonNode* rowHead = getRowHead(solution[i]);
+		solutionIndex = rowHead->columnIndex; //First element infers location
+        value = getValue(rowHead->rightNode->columnIndex); //Second element infers value
         answer[solutionIndex] = value;
     }
 }
@@ -104,6 +105,23 @@ void SudokuSolver::appendOneSubscript(vector<vector<int>>& elementSubscriptss, i
 }
 
 //Get value according to orthogonal list index
-int SudokuSolver::getValue(int index){
+inline int SudokuSolver::getValue(int index){
     return (((index - sudokuSize) % sudokuLength) + 1);
+}
+
+CommonNode * SudokuSolver::getRowHead(CommonNode * node)
+{
+	int columnIndex = node->columnIndex;
+	if (columnIndex <= 80) {
+        return node;
+    } else if (columnIndex >= 81 && columnIndex <= 161) {
+        return (CommonNode*)(node->leftNode);
+    } else if (columnIndex >= 162 && columnIndex <= 242) {
+        return (CommonNode*)(node->leftNode->leftNode);
+    } else if (columnIndex >= 243 && columnIndex <= 323) {
+        return (CommonNode*)(node->leftNode->leftNode->leftNode);
+    } else {
+        std::cout << "SudokuSolver::getRowHead(): Column index out of bound." << endl;
+    }
+	return nullptr;
 }

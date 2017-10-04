@@ -13,13 +13,13 @@ using namespace std;
 class DLXSolver {
 public:
     //Get only one solution
-    bool solveWithOneAnswer(DLXNode *listHead, vector<int>& solution, int depth);
+    bool solveWithOneAnswer(DLXNode *listHead, vector<CommonNode*>& solution, int depth);
 
     //Get all solutions
-    void solveWithAllAnswers(DLXNode *listHead, vector<int>& tempSolution, vector<vector<int>>& lastSolution, int depth);
+    void solveWithAllAnswers(DLXNode *listHead, vector<CommonNode*>& tempSolution, vector<vector<CommonNode*>>& lastSolution, int depth);
 
     //Get certain amount of answers
-    void solveWithCertainAnswers(DLXNode *listHead, vector<int> &tempSolution, vector<vector<int>> &lastSolution,
+    void solveWithCertainAnswers(DLXNode *listHead, vector<CommonNode*> &tempSolution, vector<vector<CommonNode*>> &lastSolution,
                                  int answerCount, int depth);
 
     //Cover certain rows

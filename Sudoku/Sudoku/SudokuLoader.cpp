@@ -28,15 +28,17 @@ vector<vector<int>> SudokuLoader::loadFromFile(fstream& file){
     }
 
     //Part numbers into groups
-    for (unsigned int j = 0; j < content.size(); ++j) {
+    for (unsigned int j = 0, k = 0; j < content.size(); ++j) {
         int sudokuIndex = j / sudokuSize;
-        vector<int> newSudoku;
-
+        
         if (j % sudokuSize == 0) { //Come with a new sudoku
+            vector<int> newSudoku;
+            newSudoku.resize(sudokuSize);
+            k = 0;
             sudokuSet.push_back(newSudoku);
         }
 
-        sudokuSet[sudokuIndex].push_back(content[j] - '0');
+        sudokuSet[sudokuIndex][k++] = content[j] - '0';
     }
 
     return sudokuSet;
